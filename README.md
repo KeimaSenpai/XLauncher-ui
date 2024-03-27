@@ -1,6 +1,7 @@
-<div alain="center">
-    <img src="XLauncher LogoX.webp" alt="Launcher de Minecraft">
+<div align="center">
+    <img src="XLauncher LogoX.webp" alt="Launcher de Minecraft" height="250">
 </div>
+
 # Minecraft Launcher
 > Launcher de minecraft que hice para un video de YouTube
 
