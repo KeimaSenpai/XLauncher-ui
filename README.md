@@ -4,7 +4,7 @@
 
 # Minecraft Launcher
 
-![1711569832079](image/README/1711569832079.png "Interfaz del XLauncher")
+![1711569832079](XLauncher-UI.png "Interfaz del XLauncher")
 
 > Launcher de minecraft que hice para un video de YouTube
 
