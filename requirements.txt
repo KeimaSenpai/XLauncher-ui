@@ -1,0 +1,3 @@
+flet
+minecraft-launcher-lib
+pyinstaller
