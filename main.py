@@ -1,5 +1,5 @@
 import flet as ft
-from flet import *
+
 
 
 def main(page: ft.Page):
@@ -9,16 +9,26 @@ def main(page: ft.Page):
     page.window_resizable = False
     page.padding = 0
     page.fonts = {
-        "Revamped": "assets/fonts/minecraft-dungeons.ttf"
+        "Revamped": "fonts/minecraft-dungeons.ttf"
     }
 
-
+    logo = ft.Image(src='img/logo.webp')
+    play = ft.CupertinoFilledButton(
+            content=ft.Text("CupertinoFilled"),
+            opacity_on_click=0.3,
+            on_click=lambda e: print("CupertinoFilledButton clicked!"),
+        )
+    nabvar = ft.Column(
+        controls=[
+            play
+        ]
+    )
 
     #Navegacion principal de la app
     nab = ft.Container(
         height= 450,
         width= 76,
-        bgcolor='#329acc'
+        bgcolor='#131313'
     )
     #Pagina inicial
     conte = ft.Container(
