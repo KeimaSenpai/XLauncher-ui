@@ -1,4 +1,4 @@
-flet==0.26.0
-flet[all]==0.26.0
+flet==0.25.0
+flet[all]==0.25.0
 minecraft-launcher-lib
 pillow

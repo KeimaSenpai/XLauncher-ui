@@ -5,7 +5,7 @@ description = "Launcher de Minecraft no oficial"
 authors = [
   {name = "KeimaSenpai", email = "KeimaSenpai@proton.me"}
 ]
-dependencies = ["flet==0.26.0", "minecraft-launcher-lib", "pillow"]
+dependencies = ["flet==0.25.0", "minecraft-launcher-lib", "pillow"]
 
 
 [tool.flet]
