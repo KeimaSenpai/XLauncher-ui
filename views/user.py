@@ -40,20 +40,11 @@ username = ft.TextField(
     value=config_data.get("username", "")
 )
 
-# ram = ft.TextField(
-#     hint_text="RAM",
-#     width=250,
-#     height=50,
-#     bgcolor='#343434',
-#     border=ft.InputBorder.NONE,
-#     border_radius=30,
-#     cursor_height=20,
-#     text_style=ft.TextStyle(
-#         font_family='mine',
-#         size=15,
-#     ),
-#     value=config_data.get("ram", "")
-# )
+# Establecer un valor predeterminado para RAM
+try:
+    ram_default = float(config_data.get("ram"))
+except (TypeError, ValueError):
+    ram_default = 2  # Valor por defecto (modifícalo si lo deseas)
 
 ram = ft.Slider(
         min=0, 
@@ -66,7 +57,8 @@ ram = ft.Slider(
 
         divisions=6, 
         label="{value}", 
-        value=config_data.get("ram",""))
+        value=ram_default,
+    )
 
 version = ft.Dropdown(
     width=250,

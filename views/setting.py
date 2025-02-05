@@ -59,6 +59,8 @@ file_picker = ft.FilePicker(on_result=file_picker_result)
 # Mostrar la ruta del Java actual
 java_path_text = ft.Text(config.get("java", ""), size=15, font_family='mine')
 
+
+# Botón para seleccionar el Java
 select_java_button = ft.ElevatedButton(
     text="Java",
     style=ft.ButtonStyle(
@@ -73,9 +75,10 @@ select_java_button = ft.ElevatedButton(
 )
 
 
+
 def create_setting_page(page):
     info_button = ft.IconButton(
-        icon=ft.icons.INFO,
+        icon=ft.Icons.INFO,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -142,7 +145,7 @@ de personalización.
                 ft.Text(
                     disabled=False,
                     spans=[
-                        ft.TextSpan('Copyright © 2024.  ',
+                        ft.TextSpan('Copyright © 2025.  ',
                                     ft.TextStyle(
                                         font_family='mine',
                                     )
@@ -172,13 +175,38 @@ de personalización.
 
     #Sección de reportes, bug, etc
     report_button = ft.IconButton(
-        icon=ft.icons.WARNING,
+        icon=ft.Icons.WARNING,
         style=ft.ButtonStyle(
             color="#e61a23",
             bgcolor="#0C0C0C",
             shape=ft.RoundedRectangleBorder(radius=5),
         ),
         on_click=lambda e: page.open(dlf)
+    )
+
+    contenedor = ft.Container(
+        content=ft.Column(
+            controls=[
+                ft.Text("Ruta del Java", size=15, font_family='mine'),
+                ft.Column(
+                    controls=[
+                        java_path_text,
+                        ft.Row(
+                            controls=[
+                                select_java_button,
+                                report_button,
+                                info_button
+                            ],
+                            alignment=ft.MainAxisAlignment.CENTER,
+                        )
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        ),
+        alignment=ft.alignment.center,
     )
 
     suport_category = ft.Dropdown(
@@ -252,11 +280,8 @@ de personalización.
                 content=ft.Column(
                     controls=[
                         title,
-                        java_path_text,
-                        select_java_button,
+                        contenedor,
                         file_picker,
-                        info_button,
-                        report_button
                     ],
                     alignment=ft.MainAxisAlignment.CENTER,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,

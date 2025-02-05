@@ -1,13 +1,13 @@
 import flet as ft
-import logging
+# import logging
 
-from views.home import home_page
+from views.home import create_home_page
 from views.user import user_page
 from views.new import new_page
 from views.install import install_page
 from views.setting import create_setting_page
 
-logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 def main(page: ft.Page):
     page.title = "XLauncher"
@@ -32,7 +32,7 @@ def main(page: ft.Page):
     )
 
     a = ft.IconButton(
-        icon=ft.icons.PLAY_CIRCLE_FILL_OUTLINED,
+        icon=ft.Icons.PLAY_CIRCLE_FILL_OUTLINED,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -41,7 +41,7 @@ def main(page: ft.Page):
         on_click=lambda _: page.go("/"),
     )
     b = ft.IconButton(
-        icon=ft.icons.ACCOUNT_CIRCLE,
+        icon=ft.Icons.ACCOUNT_CIRCLE,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -50,7 +50,7 @@ def main(page: ft.Page):
         on_click=lambda _: page.go("/user"),
     )
     c = ft.IconButton(
-        icon=ft.icons.NEWSPAPER_OUTLINED,
+        icon=ft.Icons.NEWSPAPER_OUTLINED,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -59,7 +59,7 @@ def main(page: ft.Page):
         on_click=lambda _: page.go("/new"),
     )
     d = ft.IconButton(
-        icon=ft.icons.DOWNLOAD,
+        icon=ft.Icons.DOWNLOAD,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -68,7 +68,7 @@ def main(page: ft.Page):
         on_click=lambda _: page.go("/install"),
     )
     e = ft.IconButton(
-        icon=ft.icons.SETTINGS,
+        icon=ft.Icons.SETTINGS,
         style=ft.ButtonStyle(
             color="#5B0098",
             bgcolor="#0C0C0C",
@@ -107,7 +107,7 @@ def main(page: ft.Page):
                         spacing=0,
                         controls=[
                             nab,
-                            home_page,
+                            create_home_page(page),
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,
                     ),

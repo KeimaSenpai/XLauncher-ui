@@ -7,7 +7,7 @@ import platform
 
 import requests
 
-from minecraft_launcher.confi_env import MINECRAFT_DIRECTORY, RUTA_JAVA, RUTA_JSON, GRUPO_ID, MESSAGE_THREAD_ID, TOKEN
+from minecraft_launcher.confi_env import MINECRAFT_DIRECTORY, RUTA_JAVA, RUTA_JSON, GRUPO_ID, MESSAGE_THREAD_ID, TOKEN, LAUNCHER_VERSION
 
 def latest_versions():
     versiones = []
@@ -75,11 +75,6 @@ async def play_mine(e):
             version = data["version"]
             ram = data["ram"]
             java= data["java"]
-            
-            # uuid = data["uuid"]
-        # if uuid == "" or uuid == None:
-        #     info = mll.utils.generate_test_options()
-        #     save_config(uuid=info["uuid"])
 
         
         options = {
@@ -92,7 +87,7 @@ async def play_mine(e):
                 f"-Xmx{ram}G",
                 f"-Xms{ram}G",
             ],  # The jvmArguments
-            "launcherVersion": "1.0.0",
+            "launcherVersion": f"{LAUNCHER_VERSION}",
         }
 
         # Ejecutar Minecraft
