@@ -211,9 +211,7 @@ de personalización.
 
     suport_category = ft.Dropdown(
         width=200,
-        height=50,
         bgcolor="#343434",
-        focused_bgcolor="#343434",
         border=ft.InputBorder.NONE,
         options=[
             ft.dropdown.Option("Bug"),

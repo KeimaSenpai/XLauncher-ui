@@ -1,11 +1,11 @@
 [project]
 name = "XLauncher"
-version = "1.0.6"
+version = "1.0.7"
 description = "Launcher de Minecraft no oficial"
 authors = [
   {name = "KeimaSenpai", email = "KeimaSenpai@proton.me"}
 ]
-dependencies = ["flet==0.25.0", "minecraft-launcher-lib", "pillow"]
+dependencies = ["flet==0.27.6", "minecraft-launcher-lib", "pillow"]
 
 
 [tool.flet]
@@ -13,4 +13,4 @@ org = "by.bytebloom" # --org
 product = "XLauncher" # --product
 company = "ByteBloom" # --company
 copyright = "Copyright (C) 2025 by ByteBloom" # --copyright
-build_number = 6 # --build-number
+build_number = 7 # --build-number

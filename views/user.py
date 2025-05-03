@@ -62,9 +62,7 @@ ram = ft.Slider(
 
 version = ft.Dropdown(
     width=250,
-    height=50,
     bgcolor="#343434",
-    focused_bgcolor="#343434",
     border=ft.InputBorder.NONE,
     text_style=ft.TextStyle(
         font_family='mine',

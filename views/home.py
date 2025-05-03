@@ -11,6 +11,7 @@ def create_home_page(page):
 
     play = ft.ElevatedButton(
         "PLAY",
+        width=100,
         style=ft.ButtonStyle(
             color="#ffffff",
             bgcolor="#5B0098",
@@ -18,6 +19,7 @@ def create_home_page(page):
             shape=ft.RoundedRectangleBorder(radius=3),
             shadow_color="#000000",
             elevation=5,
+            padding=10,
         ),
         on_click=play_mine,
     )

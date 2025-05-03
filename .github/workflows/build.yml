@@ -7,7 +7,7 @@ on:
 env:
   # https://flet.dev/docs/publish#versioning
   BUILD_NUMBER: 6
-  BUILD_VERSION: 1.0.6
+  BUILD_VERSION: 1.0.7
   PYTHON_VERSION: 3.12.2
   FLUTTER_VERSION: 3.24.0
 
@@ -54,20 +54,20 @@ jobs:
         release_name: "XLauncher v${{ env.BUILD_VERSION }}"
         body: |
           ## 🚀 Funciones
-          - [x] Notificacion al ejecutar una version
+          - [x] Notificación al ejecutar una version
           ------
           ## 📑Próximamente
           - [ ] Login con cuenta Premium.
           - [ ] Soporte para varios idiomas.
-          - [ ] Mejoras en la interfaz de usuario.
           - [ ] Funcionalidad de la sección de noticias.
           ------
           ## 🐛Se corrigieron los siguientes bugs.
           - [x] Mejor optimización del launcher.
+          - [x] Actualizada de la librería flet
+          - [x] Corrección de código deprecated
 
           > [!IMPORTANT]
-          > Estos es a partir de versiones anteriores a la v1.0.5
-          > Tienen que sacar de la carpeta _internal la carpeta assets hacia la ruta principal del launcher para que salgan todos los recursos.
+          > Intenta mandar cualquier error o sugerencia para mejorarlo
           
           ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/KeimaSenpai/XLauncher-ui/total?style=for-the-badge&label=Download&color=%23756AB6)
         draft: false

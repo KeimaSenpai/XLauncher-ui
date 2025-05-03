@@ -29,7 +29,7 @@ pb = ft.ProgressBar(
 )
 dd = ft.Dropdown(
     width=200,
-    height=50,
+    # height=50,
     bgcolor="#343434",
     focused_bgcolor="#343434",
     border=ft.InputBorder.NONE,
@@ -37,9 +37,7 @@ dd = ft.Dropdown(
 )
 de = ft.Dropdown(
     width=200,
-    height=50,
     bgcolor="#343434",
-    focused_bgcolor="#343434",
     border=ft.InputBorder.NONE,
     options=[
             ft.dropdown.Option("Vanilla"),

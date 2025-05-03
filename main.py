@@ -15,7 +15,9 @@ def main(page: ft.Page):
     page.window.height = 500
     page.window.resizable = False
     page.window.maximizable = False
+    # page.window.frameless = True
     page.padding = 0
+    page.spacing = 0
     page.theme_mode = "dark"
     page.fonts = {
         "mine": "fonts/minecraft.ttf",
