@@ -55,7 +55,7 @@ jobs:
     - name: Compress folder
       shell: powershell
       run: |
-        ls -la
+        ls
         Compress-Archive -Path build/windows -DestinationPath build/XLauncher-Windows.zip
 
     - name: Create GitHub Release
