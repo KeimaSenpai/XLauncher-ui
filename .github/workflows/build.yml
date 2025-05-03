@@ -34,12 +34,18 @@ jobs:
       with:
         flutter-version: ${{ env.FLUTTER_VERSION }}
     
-    - name: Configure UTF-8 encoding
+    - name: Configure Environment for UTF-8
+      shell: cmd
       run: |
         chcp 65001
-        set PYTHONIOENCODING=utf-8
+        echo "PYTHONIOENCODING=utf-8" >> $GITHUB_ENV
+        echo "PYTHONUTF8=1" >> $GITHUB_ENV
+        echo "LC_ALL=en_US.UTF-8" >> $GITHUB_ENV
 
     - name: Flet Build Windows
+      shell: cmd
+      env:
+        TERM: xterm-256color
       run: |
         flutter config --no-analytics
         flet build windows --verbose --no-rich-output --build-number=$env:BUILD_NUMBER --build-version=$env:BUILD_VERSION
