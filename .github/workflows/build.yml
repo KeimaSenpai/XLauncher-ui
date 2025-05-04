@@ -34,7 +34,6 @@ jobs:
 
     - name: Flet Build Windows
       run: |
-        flutter config --no-analytics
         flet build windows --verbose --no-rich-output --build-number=$env:BUILD_NUMBER --build-version=$env:BUILD_VERSION
 
     - name: Compress folder
