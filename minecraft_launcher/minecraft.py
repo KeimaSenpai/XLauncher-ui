@@ -17,7 +17,7 @@ def latest_versions():
             versiones.append(ver["id"])
     return versiones
 
-def list_versions():
+async def list_versions():
     versioneslis = []
     versionlis = mll.utils.get_version_list()
     for ver in versionlis:

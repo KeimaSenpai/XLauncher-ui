@@ -5,19 +5,26 @@ from minecraft_launcher.confi_env import MINECRAFT_DIRECTORY
 from minecraft_launcher.minecraft import list_versions, save_config
 
 
-def check_internet():
+async def check_internet():
     try:
         urllib.request.urlopen('https://google.com', timeout=10)
-        return True
-    except urllib.request.URLError as err: 
-        return False
-
-if check_internet():
-    versions = list_versions()
-else:
-    versions = ["No Internet"]
-
-opciones = [ft.dropdown.Option(version) for version in versions]
+        versions = await list_versions()
+        return versions
+    except urllib.request.URLError as err:
+        versions = ['No Internet']
+        return versions
+    
+async def update_dropdown(e):
+    # Verificar internet cada vez que se hace focus
+    versions = await check_internet()
+    
+    if versions:
+        dd.options = [ft.dropdown.Option(version) for version in versions]
+    else:
+        dd.options = [ft.dropdown.Option(version) for version in versions]
+    
+    dd.update()  # Actualizar el dropdown en la UI
+ 
 title = ft.Text('Instalación', font_family='mine_dun', size=30)
 pb = ft.ProgressBar(
     width=600, 
@@ -25,17 +32,18 @@ pb = ft.ProgressBar(
     value=0, 
     color='#5B0098', 
     bgcolor='#1F1F23', 
-    border_radius=0
+    border_radius=0,
 )
 dd = ft.Dropdown(
+    label="Versión",
     width=200,
-    # height=50,
     bgcolor="#343434",
-    focused_bgcolor="#343434",
     border=ft.InputBorder.NONE,
-    options=opciones,
+    options= [],
+    enable_search=True,
 )
 de = ft.Dropdown(
+    label="Edición",
     width=200,
     bgcolor="#343434",
     border=ft.InputBorder.NONE,
@@ -45,6 +53,11 @@ de = ft.Dropdown(
             ft.dropdown.Option("Fabric"),
         ],
 )
+refresh_btn = ft.IconButton(
+        icon=ft.Icons.REFRESH,
+        tooltip="Refrescar versiones",
+        on_click=update_dropdown,
+    )
 
 downloadtext = ft.ListView(spacing=5, padding=10, auto_scroll=True)
 downloadprogress = ft.ListView(width=50, auto_scroll=True)
@@ -161,6 +174,7 @@ install_page = ft.Stack(
                 controls=[
                     title,
                     dd,
+                    refresh_btn,
                     de,
                     downloadtext,
                     pb,

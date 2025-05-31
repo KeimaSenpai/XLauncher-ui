@@ -1,6 +1,6 @@
 import os
 # Variables del Launcher
-LAUNCHER_VERSION = '1.0.7'
+LAUNCHER_VERSION = '1.0.8'
 USER_WINDOWS = os.environ["USERNAME"]
 MINECRAFT_DIRECTORY = f"C://Users//{USER_WINDOWS}//AppData//Roaming//.xlauncher"
 RUTA_JSON = f"{MINECRAFT_DIRECTORY}//configuration.json"
